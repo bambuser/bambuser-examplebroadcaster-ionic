@@ -1,0 +1,18 @@
+<ion-content padding>
+
+  <button ion-button
+    *ngIf="!isBroadcasting"
+    [disabled]="isPending"
+    (click)="start()">
+    Start
+  </button>
+
+  <button ion-button
+    *ngIf="isBroadcasting"
+    [disabled]="isPending"
+    (click)="stop()"
+    color="danger">
+    Stop
+  </button>
+
+</ion-content>
