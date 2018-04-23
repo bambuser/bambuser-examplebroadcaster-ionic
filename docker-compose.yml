@@ -1,0 +1,25 @@
+# If you prefer to encapsulate the Node.js parts of this tutorial in a
+# Docker container, you can copy our example Dockerfile and docker-compose.yml
+# into your project.
+#
+# To start an interactive shell in the Node.js container,
+# use `./docker-compose run --service-ports example`
+#
+# docker-compose.yml provides misc dev conveniences:
+# it opens relevant ports for `ionic serve`and  maps the project directory
+# from the host to the container so that edits on the host appears in
+# the container and vice versa
+
+version: "3.3"
+services:
+  example:
+    build: .
+    ports:
+    - "8100:8100"
+    - "35729:35729"
+    - "53703:53703"
+    - "53704:53704"
+    volumes:
+    - .:/opt/example
+    working_dir: /opt/example
+    command: bash -l
