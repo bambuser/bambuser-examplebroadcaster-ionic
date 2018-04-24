@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { ToastController } from 'ionic-angular';
+import { Platform, ToastController } from 'ionic-angular';
+
+// Application id generated at https://dashboard.irisplatform.io/developer
+const APPLICATION_ID:string = 'CHANGEME';
 
 @Component({
   selector: 'page-broadcaster',
@@ -8,17 +11,44 @@ import { ToastController } from 'ionic-angular';
 export class BroadcasterPage {
   isBroadcasting = false;
   isPending = false;
+  broadcaster: any;
 
-  constructor(private toastCtrl: ToastController) {}
+  constructor(
+    private toastCtrl: ToastController,
+    public platform: Platform) {
+
+    platform.ready().then(() => {
+      // Using array syntax workaround, since types are not declared.
+      if (window['bambuser']) {
+        this.broadcaster = window['bambuser']['broadcaster'];
+        this.broadcaster.setApplicationId(APPLICATION_ID);
+      } else {
+        // Cordova plugin not installed or running in a web browser
+      }
+    });
+  }
 
   ionViewDidEnter() {
     // Engage our Ionic CSS background overrides that ensure viewfinder is visible.
     document.getElementsByTagName('body')[0].classList.add("show-viewfinder");
+
+    if (!this.broadcaster) {
+      alert('broadcaster is not ready yet');
+      return;
+    }
+
+    console.log('Starting viewfinder');
+    this.broadcaster.showViewfinderBehindWebView();
   }
 
   ionViewWillLeave() {
     // Disengage our Ionic CSS background overrides, to ensure the rest of the app looks ok.
     document.getElementsByTagName('body')[0].classList.remove("show-viewfinder");
+
+    console.log('Removing viewfinder');
+    if (this.broadcaster) {
+      this.broadcaster.hideViewfinder();
+    }
   }
 
   async start() {
@@ -28,14 +58,20 @@ export class BroadcasterPage {
       message: 'Starting broadcast...',
       position: 'middle',
     });
-    toast.present();
+    await toast.present();
 
-    console.log('TODO start broadcasting');
-    await new Promise(resolve => setTimeout(resolve, 3000)); // Mockup: simulated startup time
-
-    toast.dismiss();
-    this.isBroadcasting = true;
-    this.isPending = false;
+    console.log('Starting broadcast');
+    try {
+      await this.broadcaster.startBroadcast();
+      toast.dismiss();
+      this.isBroadcasting = true;
+      this.isPending = false;
+    } catch (e) {
+      toast.dismiss();
+      this.isPending = false;
+      alert('Failed to start broadcast');
+      console.log(e);
+    }
   }
 
   async stop() {
@@ -45,13 +81,19 @@ export class BroadcasterPage {
       message: 'Ending broadcast...',
       position: 'middle'
     });
-    toast.present();
+    await toast.present();
 
-    console.log('TODO: stop broadcasting');
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Mockup: simulated end time
-
-    toast.dismiss();
-    this.isBroadcasting = false;
-    this.isPending = false;
+    console.log('Ending broadcast');
+    try {
+      await this.broadcaster.stopBroadcast();
+      toast.dismiss();
+      this.isBroadcasting = false;
+      this.isPending = false;
+    } catch (e) {
+      toast.dismiss();
+      this.isPending = false;
+      alert('Failed to stop broadcast');
+      console.log(e);
+    }
   }
 }

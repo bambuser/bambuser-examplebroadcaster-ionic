@@ -2,7 +2,7 @@
 
   <button ion-button
     *ngIf="!isBroadcasting"
-    [disabled]="isPending"
+    [disabled]="!broadcaster || isPending"
     (click)="start()">
     Start
   </button>
