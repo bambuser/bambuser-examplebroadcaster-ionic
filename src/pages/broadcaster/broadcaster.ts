@@ -11,6 +11,16 @@ export class BroadcasterPage {
 
   constructor(private toastCtrl: ToastController) {}
 
+  ionViewDidEnter() {
+    // Engage our Ionic CSS background overrides that ensure viewfinder is visible.
+    document.getElementsByTagName('body')[0].classList.add("show-viewfinder");
+  }
+
+  ionViewWillLeave() {
+    // Disengage our Ionic CSS background overrides, to ensure the rest of the app looks ok.
+    document.getElementsByTagName('body')[0].classList.remove("show-viewfinder");
+  }
+
   async start() {
     if (this.isBroadcasting || this.isPending) return;
     this.isPending = true;

@@ -1,3 +1,23 @@
+/**
+ * Make all layer background transparent that normally are opaque in Ionic
+ * so that cordova-plugin-bambuser is able to draw a camera viewfinder
+ * behind the web view.
+ */
+body.show-viewfinder {
+  ion-app,
+  ion-content,
+  .nav-decor {
+    background-color: transparent !important;
+  }
+
+  /**
+   * For debugging: a semi-transparent <body>
+   * Uncomment to illustrate whether or not the ionic app is transparent,
+   * regardless of whether or not a viewfinder is displayed
+   */
+  // background-color: rgba(255, 0, 0, 0.5);
+}
+
 page-broadcaster {
 
 }
