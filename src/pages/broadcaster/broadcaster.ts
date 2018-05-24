@@ -29,6 +29,8 @@ export class BroadcasterPage {
   }
 
   ionViewDidEnter() {
+    if (APPLICATION_ID === 'CHANGEME') alert('Warning: APPLICATION_ID is not set. Get your application id at https://dashboard.irisplatform.io/developer and update pages/broadcaster/broadcaster.ts, then rebuild the app.');
+
     // Engage our Ionic CSS background overrides that ensure viewfinder is visible.
     document.getElementsByTagName('body')[0].classList.add("show-viewfinder");
 
