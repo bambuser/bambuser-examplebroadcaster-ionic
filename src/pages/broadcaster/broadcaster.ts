@@ -12,6 +12,7 @@ export class BroadcasterPage {
   isBroadcasting = false;
   isPending = false;
   broadcaster: any;
+  errListenerId = false;
 
   constructor(
     private toastCtrl: ToastController,
@@ -72,6 +73,9 @@ export class BroadcasterPage {
       toast.dismiss();
       this.isBroadcasting = true;
       this.isPending = false;
+
+      this.listenForError();
+
     } catch (e) {
       toast.dismiss();
       this.isPending = false;
@@ -101,5 +105,19 @@ export class BroadcasterPage {
       alert('Failed to stop broadcast');
       console.log(e);
     }
+  }
+
+  listenForError() {
+    if (this.errListenerId) return;
+    this.errListenerId = this.broadcaster.addEventListener('connectionError', status => {
+      this.isBroadcasting = false;
+      this.isPending = false;
+      const toast = this.toastCtrl.create({
+        message: 'Connection error',
+        position: 'middle',
+        duration: 3000,
+      });
+      toast.present();
+    });
   }
 }
