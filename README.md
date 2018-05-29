@@ -73,5 +73,5 @@ This outputs optimized JavaScript and CSS bundles into `./platforms/*/www/`
 
    AND / OR
 
-   b) Open the project in `platforms/ios` with XCode to build for an iOS device
+   b) Open the project in `./platforms/ios` with XCode to build for an iOS device
    (live streaming not supported in the simulator)
