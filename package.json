@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "Bambuser AB",
   "homepage": "https://irisplatform.io/",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "clean": "ionic-app-scripts clean",
