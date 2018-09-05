@@ -11,8 +11,9 @@
 bambuser-examplebroadcaster-ionic
 ---------------------------------
 
-This Git repository is the end result of a tutorial on how to build
-a live streaming app using Cordova, Ionic and Bambuser's SDK:s and cloud services.
+This Git repository is the end result of [a tutorial on how to build
+a live streaming app using Cordova, Ionic and Bambuser's SDK:s
+and cloud services](https://bambuser.com/docs/broadcasting/cordova/).
 
 
 ### Prerequisites:
@@ -75,3 +76,7 @@ This outputs optimized JavaScript and CSS bundles into `./platforms/*/www/`
 
    b) Open the project in `./platforms/ios` with XCode to build for an iOS device
    (live streaming not supported in the simulator)
+
+
+For a more comprehensive walkthrough, [check out the full
+tutorial](https://bambuser.com/docs/broadcasting/cordova/).
