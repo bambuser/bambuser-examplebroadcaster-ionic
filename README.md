@@ -53,7 +53,7 @@ with `ionic cordova plugin add https://github.com/bambuser/cordova-plugin-bambus
    XCode project in `./platforms/ios/`
 
 
-5. Add [your applicationId generated at the developer page](https://dashboard.irisplatform.io/developer)
+5. Add [your applicationId generated at the developer page](https://dashboard.bambuser.com/developer)
 in the constructor of `./src/pages/broadcaster/broadcaster.ts`
 
 ```

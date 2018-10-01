@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform, ToastController } from 'ionic-angular';
 
-// Application id generated at https://dashboard.irisplatform.io/developer
+// Application id generated at https://dashboard.bambuser.com/developer
 const APPLICATION_ID:string = 'CHANGEME';
 
 @Component({
@@ -32,7 +32,7 @@ export class BroadcasterPage {
   async ionViewDidEnter() {
     if (APPLICATION_ID === 'CHANGEME') {
       await new Promise(resolve => setTimeout(resolve, 500)); // Let page animations to finish before using alert()
-      alert('Warning: APPLICATION_ID is not set. Get your application id at https://dashboard.irisplatform.io/developer and update pages/broadcaster/broadcaster.ts, then rebuild the app.');
+      alert('Warning: APPLICATION_ID is not set. Get your application id at https://dashboard.bambuser.com/developer and update pages/broadcaster/broadcaster.ts, then rebuild the app.');
     }
 
     // Engage our Ionic CSS background overrides that ensure viewfinder is visible.
