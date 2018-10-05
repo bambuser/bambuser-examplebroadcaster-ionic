@@ -15,4 +15,4 @@ FROM node:8
 RUN apt-get update && apt-get install -y wget unzip
 
 # https://ionicframework.com/docs/intro/installation/
-RUN npm install -g ionic@3.20.0 cordova@8.0.0
+RUN npm install -g ionic@3.20.0 cordova@8.1.1
