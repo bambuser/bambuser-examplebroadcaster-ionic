@@ -21,7 +21,9 @@ and cloud services](https://bambuser.com/docs/broadcasting/cordova/).
 You need XCode and / or Android Studio, depending on whether you are targeting
 iOS or Android or both.
 
-Also install Node.js and then run `npm install -g ionic@3.20.0 cordova@8.1.1`
+Also install Node.js and then install Ionic CLI and Cordova CLI globally
+by running `npm install -g ionic cordova` (unless you have them
+already)
 
 OR
 
