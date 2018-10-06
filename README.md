@@ -82,3 +82,9 @@ This outputs optimized JavaScript and CSS bundles into `./platforms/*/www/`
 
 For a more comprehensive walkthrough, [check out the full
 tutorial](https://bambuser.com/docs/broadcasting/cordova/).
+
+
+### What's next?
+
+Also consider reading the [player guide](https://bambuser.com/docs/playback/cordova/)
+and trying out the Ionic [example player app](https://github.com/bambuser/bambuser-exampleplayer-ionic).
