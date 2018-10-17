@@ -30,7 +30,7 @@ export class BroadcasterPage {
   }
 
   async ionViewDidEnter() {
-    if (APPLICATION_ID === 'CHANGEME') {
+    if (APPLICATION_ID.endsWith('NGEME')) {
       await new Promise(resolve => setTimeout(resolve, 500)); // Let page animations to finish before using alert()
       alert('Warning: APPLICATION_ID is not set. Get your application id at https://dashboard.bambuser.com/developer and update pages/broadcaster/broadcaster.ts, then rebuild the app.');
     }
