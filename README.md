@@ -63,7 +63,7 @@ const APPLICATION_ID:string = 'CHANGEME';
 ```
 
 
-6. Run `ionic cordova prepare` after each change to the HTML5 parts of your
+6. Run `npm run prepare` after each change to the HTML5 parts of your
 hybrid app, i.e. the files in `./src/`.
 
 This outputs optimized JavaScript and CSS bundles into `./platforms/*/www/`
