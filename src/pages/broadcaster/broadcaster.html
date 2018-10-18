@@ -15,4 +15,11 @@
     Stop
   </button>
 
+  <button ion-button icon-only
+    *ngIf="broadcaster"
+    [disabled]="isPending"
+    (click)="switchCamera()">
+    <ion-icon name="reverse-camera"></ion-icon>
+  </button>
+
 </ion-content>

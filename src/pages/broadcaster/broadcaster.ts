@@ -120,4 +120,10 @@ export class BroadcasterPage {
       toast.present();
     });
   }
+
+  switchCamera() {
+    if (this.broadcaster) {
+      this.broadcaster.switchCamera();
+    }
+  }
 }
