@@ -3,7 +3,7 @@
 # into your project.
 #
 # To start an interactive shell in the Node.js container,
-# use `docker-compose run --service-ports example`
+# use `docker-compose run --service-ports --rm example`
 #
 # docker-compose.yml provides misc dev conveniences:
 # it opens relevant ports for `ionic serve`and  maps the project directory
