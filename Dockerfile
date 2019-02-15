@@ -13,4 +13,4 @@
 FROM node:8
 
 # https://ionicframework.com/docs/intro/installation/
-RUN npm install -g ionic@3.20.0 cordova@8.1.1
+RUN npm install -g ionic@4.10.3 cordova@8.1.2
