@@ -11,6 +11,8 @@
 bambuser-examplebroadcaster-ionic
 ---------------------------------
 
+[![Build Status](https://travis-ci.org/sven-inge/bambuser-examplebroadcaster-ionic.svg?branch=master)](https://travis-ci.org/sven-inge/bambuser-examplebroadcaster-ionic)
+
 This Git repository is the end result of [a tutorial on how to build
 a live streaming app using Cordova, Ionic and Bambuser's SDK:s
 and cloud services](https://bambuser.com/docs/broadcasting/cordova/).
