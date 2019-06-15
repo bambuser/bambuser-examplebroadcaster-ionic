@@ -17,7 +17,7 @@
     "ionic:serve": "ionic-app-scripts serve",
     "prepare:android": "ionic-app-scripts build android && cordova prepare android --no-telemetry --verbose",
     "prepare:ios": "ionic-app-scripts build ios && cordova prepare ios --no-telemetry --verbose",
-    "prepare": "ionic-app-scripts build && cordova prepare --no-telemetry --verbose"
+    "prepare:all": "ionic-app-scripts build && cordova prepare --no-telemetry --verbose"
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
