@@ -43,7 +43,7 @@ opening http://localhost:8100 in a web browser.
 
 
 3. Install [cordova-plugin-bambuser](https://github.com/bambuser/cordova-plugin-bambuser)
-with `ionic cordova plugin add cordova-plugin-bambuser@0.9.7`
+with `ionic cordova plugin add cordova-plugin-bambuser@0.9.8`
 
 
 4. Add Cordova platform-specific project files

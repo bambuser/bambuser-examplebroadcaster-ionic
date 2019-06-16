@@ -34,7 +34,7 @@ install:
 - npm install
 script:
 - npm run ionic:build
-- cordova plugin add cordova-plugin-bambuser@0.9.7
+- cordova plugin add cordova-plugin-bambuser@0.9.8
 - ionic cordova platform add $PLATFORM
 - npm run prepare:$PLATFORM
 - ionic cordova build $PLATFORM
