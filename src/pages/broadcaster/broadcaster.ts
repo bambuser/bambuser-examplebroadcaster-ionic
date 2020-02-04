@@ -39,9 +39,17 @@ export class BroadcasterPage {
     // Engage our Ionic CSS background overrides that ensure viewfinder is visible.
     document.getElementsByTagName('body')[0].classList.add("show-viewfinder");
 
+    if (!this.platform.is('cordova')) {
+      await new Promise(resolve => setTimeout(resolve, 500)); // Let page animations to finish before using alert()
+      alert('This Ionic app is currently not running within a Cordova project. Broadcasting is only supported on iOS and Android devices.');
+      return;
+    }
+
+    await this.platform.ready();
+
     if (!this.broadcaster) {
       await new Promise(resolve => setTimeout(resolve, 500)); // Let page animations to finish before using alert()
-      alert('broadcaster is not ready yet');
+      alert('Broadcasting plugin not detected. Try running `cordova plugin add cordova-plugin-bambuser` and rebuild your app.');
       return;
     }
 
